@@ -1,0 +1,49 @@
+<?php include "cabecera.html";?>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <h5>Tabla</h5>
+            <table id="la_tabla" class="table table-striped-columns" >
+                <tr>
+                    <td></td>
+                    <?php foreach($listado as $datos){?>
+                        <td><?= $datos["mes"]; ?></td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <th>info 1</th>
+                    <?php foreach($listado as $datos){?>
+                        <td><?= $datos["info_1"]; ?></td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <th>info 2</th>
+                    <?php foreach($listado as $datos){?>
+                        <td><?= $datos["info_2"]; ?></td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <th>info 3</th>
+                    <?php foreach($listado as $datos){?>
+                        <td><?= $datos["info_3"]; ?></td>
+                    <?php } ?>
+                </tr>
+               
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <h5 align="center">Gráfica circular</h5>
+            <canvas id="chart1" style="width:80%;" height="80"></canvas><!--Utilizada para dibujar gráficos-->
+        </div>
+        <div class="col-sm-4">
+            <h5 align="center">Gráfica de barras</h5>
+            <canvas id="chart2" style="width:80%;" height="80"></canvas><!--Utilizada para dibujar gráficos-->
+        </div>
+    </div>
+    
+
+</div>
+
+
+<?php include "pie.html";?>
