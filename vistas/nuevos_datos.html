@@ -2,29 +2,123 @@
 <div class="container mt-4">
     <form action="nuevos_datos_proceso.php" method="post">
         <table id="la_tabla" class="table table-striped" >
+            <!--Esto es un boceto, tenemos que ver de ponerle lo de "required" a todo lo que sea necesario, y que algunas secciones aparezcan disponibles cuando la anterior la respuesta sea un "si", y demás cosas así
+            -->
             <tr>
-                <th>info 1</th>
-                <td><input type="text" name="info_1" class="form-control"></td>
+                <th>Apellidos</th>
+                <td><input type="text" name="apellidos" class="form-control"></td>
             </tr>
             <tr>
-                <th>info 2</th>
-                <td><input type="text" name="info_2" class="form-control" ></td>
+                <th>Nombre</th>
+                <td><input type="text" name="nombre" class="form-control" ></td>
             </tr>
             <tr>
-                <th>info 3</th>
-                <td><input type="text" name="info_3" class="form-control"></td>
+                <th>Fecha de atención</th>
+                <td><input type="date" name="fecha_atencion" class="form-control"></td>
             </tr>
             <tr>
-                <th>info 4</th>
-                <td><input type="text" name="info_4" class="form-control"></td>
+                <th>Asistencia</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="asistencia">
+                    <option>Si</option>
+                    <option>No</option>
+                </select></td>
             </tr>
             <tr>
-                <th>info 5</th>
-                <td><input type="text" name="info_5" class="form-control" ></td>
+                <th>En caso de asistencia</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="tipo_asistencia">
+                    <option>PRESENCIAL</option>
+                    <option>TELEFÓNICA</option>
+                    <option>EMAIL</option>
+                </select></td>
             </tr>
             <tr>
-                <th>info 6</th>
-                <td><input type="text" name="info_6" class="form-control"></td>
+                <th>En caso de ausencia</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="tipo_ausencia">
+                    <option>CAUSA DEL ORIENTADOR</option>
+                    <option>JUSTIFICADA</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Sexo</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="sexo">
+                    <option>Mujer</option>
+                    <option>Hombre</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Prestación</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="prestacion">
+                    <option>Si</option>
+                    <option>No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Nivel de estudios</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="nivel_estudios">
+                    <option>SIN ESTUDIOS</option>
+                    <option>EGB</option>
+                    <option>ESO</option>
+                    <option>BACHILLER</option>
+                    <option>FP MEDIO</option>
+                    <option>FP SUPERIOR</option>
+                    <option>DIPLOMATURA</option>
+                    <option>LICENCIATURA</option>
+                    <option>MASTER</option>
+                    <option>DOCTORADO</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Edad</th> <!--Puse tipo text, sino podemos poner tipo number y poner un min de 0 y un maximo de 100 años y que elijan. Porque si responden esta pregunta con letras seguro que ya se jode el programa y no funcionan algunas estadisticas-->
+                <td><input type="text" name="edad" class="form-control" ></td>
+            </tr>
+            <tr>
+                <th>Carnet de conducir</th> <!--Puse lo del carnet tal cual aparecía en el archivo, pero igual deberiamos hacer aqui un selec con si y no, que en caso de si especificar en otra sección cuales carnets-->
+                <td><input type="text" name="carnet" class="form-control"></td>
+            </tr>
+            <tr>
+                <th>Vehículo</th> <!--Esta opción quiero poner que aparezca disponible o que aparezca cuando en carnet de conducir aparezca algo-->
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="vehiculo">
+                    <option>Si</option>
+                    <option>No</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Tipo de entrevista</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="entrevista">
+                    <option>No IPI</option>
+                    <option>IPI</option>
+                    <option>IPI GX</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Tipo de atención</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="tipo_atencion">
+                    <option>AP</option>
+                    <option>IPI</option>
+                    <option>IPI GX</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Situación actual</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="situacion">
+                    <option>DESEMPLEADO</option>
+                    <option>OCUPADO</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>En caso de ocupado</th> <!-- Esta opción quiero ponerla como que aparezca solo cuando OCUPADO esté seleccionado-->
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="caso_ocupado">
+                    <option>RXSS</option>
+                    <option>RETA</option>
+                    <option>ORE</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Discapacidad</th>
+                <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="discapacidad">
+                    <option>Si</option>
+                    <option>No</option>
+                </select></td>
             </tr>
         </table>
         <button type="submit" class="btn btn-outline-success">Enviar</button>
