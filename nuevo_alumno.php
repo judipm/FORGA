@@ -1,6 +1,6 @@
 <?php 
 include "modelos/bbdd/datos.php";
 
-include "vistas/nuevos_datos.html";
+include "vistas/nuevo_alumno.html";
 
 ?>

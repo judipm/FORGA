@@ -1,0 +1,61 @@
+<?php include "cabecera.html";?>
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- sacar tablas filtradas por cada una de las situaciones y por tramos de edad y sexo -->
+        <div class="col-sm-4">
+            <p>Situación actual</p>
+            <select>
+                <option></option>
+                <option onclick="situacion_laboral(1);">DESEMPLEADOS</option>
+                <option onclick="situacion_laboral(2);">OCUPADOS</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <p>Sexo</p>
+            <select>
+                <option></option>
+                <option onclick="sexo(1);">HOMBRE</option>
+                <option onclick="sexo(2);">MUJER</option>
+            </select>
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary" id="film1" >HOMBRE</button>
+                <button type="button" class="btn btn-outline-success" id="film2" >MUJER</button>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p>Tramos de edad</p>
+            <select>
+                <option></option>
+                <option onclick="edad(1);">16-34</option>
+                <option onclick="edad(2);">35-59</option>
+                <option onclick="edad(2);">60-105</option>
+            </select>
+        </div>
+            <div id="listado"></div>
+            <div class="mt-4">
+            <table id="la_tabla" class="table table-striped-columns" >
+                <tr>
+                    <th>Apellidos</th>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Edad</th>
+                    <th>Situación actual</th>  
+                    <td></td>             
+                </tr>
+                <tr>
+                    <?php foreach($listado_alumnos as $alumno){?>
+                        <td><?= $alumno["Apellidos"]; ?></td>
+                        <td><?= $alumno["Nombre"]; ?></td>
+                        <td><?= $alumno["Sexo"]; ?></td>
+                        <td><?= $alumno["Situacion"]; ?></td>
+                    <?php } ?>
+                    
+                </tr> 
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include "pie.html";?>

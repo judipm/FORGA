@@ -4,7 +4,7 @@ include "modelos/bbdd/datos.php";
 
 $listado = listado();
 
-include "vistas/listado.html";
+include "vistas/principal.html";
 ?>
 <script>
     var ctx = document.getElementById("chart1"); //seleccionamos el elemento CANVAS
