@@ -2,7 +2,7 @@
 
 include "modelos/bbdd/datos.php";
 
-nuevos_datos($_POST["info_1"], $_POST["info_2"], $_POST["info_3"], $_POST["info_4"], $_POST["info_5"], $_POST["info_6"]);
+nuevo_alumno($_POST['apellidos'], $_POST['nombre'], $_POST['fecha_atencion'], $_POST['asistencia'], $_POST['tipo_asistencia'], $_POST['tipo_ausencia'], $_POST['sexo'], $_POST['prestacion'], $_POST['nivel_estudios'], $_POST['edad'], $_POST['carnet'], $_POST['vehiculo'], $_POST['entrevista'], $_POST['tipo_atencion'], $_POST['situacion'], $_POST['caso_ocupado'], $_POST['discapacidad']);
 
 header('location: index.php');
 ?>
