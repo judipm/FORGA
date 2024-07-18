@@ -1,46 +1,58 @@
 <?php include "cabecera.html";?>
 
-<div class="container mt-4">
-    <div class="row">
+<div class="contenedor">
+    <div id="filtros">
+        <div class="row">
         <!-- sacar tablas filtradas por cada una de las situaciones y por tramos de edad y sexo -->
-        <div class="col-sm-4">
-            <p>Situación actual</p>
+         <div class="col-sm-3">
+            Situación actual:
             <select>
                 <option></option>
                 <option onclick="situacion_laboral(1);">DESEMPLEADOS</option>
                 <option onclick="situacion_laboral(2);">OCUPADOS</option>
             </select>
-        </div>
-        <div class="col-sm-4">
-            <p>Sexo</p>
-            <select>
+         </div>
+         <div class="col-sm-3">
+            Sexo: 
+            <select >
                 <option></option>
                 <option onclick="sexo(1);">HOMBRE</option>
                 <option onclick="sexo(2);">MUJER</option>
             </select>
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <button type="button" class="btn btn-outline-primary" id="film1" >HOMBRE</button>
-                <button type="button" class="btn btn-outline-success" id="film2" >MUJER</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <p>Tramos de edad</p>
+         </div>
+         <div class="col-sm-3">
+            Tramos de edad:
             <select>
                 <option></option>
                 <option onclick="edad(1);">16-34</option>
                 <option onclick="edad(2);">35-59</option>
                 <option onclick="edad(2);">60-105</option>
             </select>
+         </div>
         </div>
-            <div id="listado"></div>
-            <div class="mt-4">
-            <table id="la_tabla" class="table table-striped-columns" >
+    </div>   
+        <div class="">
+            <table id="listado" class="table table-striped-columns" >
+                
                 <tr>
                     <th>Apellidos</th>
                     <th>Nombre</th>
                     <th>Sexo</th>
                     <th>Edad</th>
-                    <th>Situación actual</th>  
+                    <th>Situación actual</th>
+                    <th id="ocupado">Tipo de ocupado</th>
+                    <th>Fecha de atención</th>
+                    <th>Asistencia</th>
+                    <th>Tipo de asistencia</th>
+                    <th>Tipo de ausencia</th>
+                    <th>Prestación</th>
+                    <th>Nivel de estudios</th>
+                    <th>Carnet</th>
+                    <th>Vehiculo</th>
+                    <th>Tipo de entrevista</th>
+                    <th>Tipo de atención</th>
+
+                    <th>Discapacidad</th>
                     <td></td>             
                 </tr>
                 <tr>
@@ -49,13 +61,23 @@
                         <td><?= $alumno["Nombre"]; ?></td>
                         <td><?= $alumno["Sexo"]; ?></td>
                         <td><?= $alumno["Situacion"]; ?></td>
-                    <?php } ?>
-                    
+                        <td><?= $alumno["Ocupado"]; ?></td>
+                        <td><?= $alumno["Fecha_atencion"]; ?></td>
+                        <td><?= $alumno["Asistencia"]; ?></td>
+                        <td><?= $alumno["Info_asistencia"]; ?></td>
+                        <td><?= $alumno["Info_ausencia"]; ?></td>
+                        <td><?= $alumno["Prestacion"]; ?></td>
+                        <td><?= $alumno["Nivel_estudios"]; ?></td>
+                        <td><?= $alumno["Carnet"]; ?></td>
+                        <td><?= $alumno["Vehiculo"]; ?></td>
+                        <td><?= $alumno["Tipo_entrevista"]; ?></td>
+                        <td><?= $alumno["Tipo_atencion"]; ?></td>
+                        <td><?= $alumno["Discapacidad"]; ?></td>
+                    <?php } ?>  
                 </tr> 
             </table>
             </div>
         </div>
-    </div>
 </div>
 
 <?php include "pie.html";?>
