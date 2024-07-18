@@ -11,7 +11,7 @@
   }
   
 	function mostrar_ocupado(ocupado) {
-    if (ocupado === 'emp') {
+    if (ocupado === 'empleado') {
       document.getElementById('ocupado-si').style.display = 'table-row';
     } else {
     document.getElementById('ocupado-si').style.display = 'none';
@@ -50,6 +50,7 @@
 				<th>En caso de asistencia</th>
 			<td>
 				<select class="form-select form-select-sm" aria-label=".form-select-lg example" name="tipo_asistencia">
+					<option> </option>
 					<option>PRESENCIAL</option>
 					<option>TELEFÓNICA</option>
 					<option>EMAIL</option>
@@ -61,6 +62,7 @@
 			<th>En caso de ausencia</th>
 			<td>
 				<select class="form-select form-select-sm" aria-label=".form-select-lg example" name="tipo_ausencia">
+					<option> </option>
 					<option>CAUSA DEL ORIENTADOR</option>
 					<option>JUSTIFICADA</option>
 				</select>
@@ -138,14 +140,15 @@
             <tr>
                 <th>Situación actual</th>
                 <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="situacion" onchange="mostrar_ocupado(this.value)">
-                    <option value="des">DESEMPLEADO</option>
-                    <option value="emp">OCUPADO</option>
+                    <option value="desempleado">DESEMPLEADO</option>
+                    <option value="empleado">OCUPADO</option>
                 </select></td>
             </tr>
             <tr id="ocupado-si" style="display:none;">
                 <th>En caso de ocupado</th> <!-- Esta opción quiero ponerla como que aparezca solo cuando OCUPADO esté seleccionado-->
                 <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="caso_ocupado">
-                    <option>RXSS</option>
+                    <option> </option>    
+					<option>RXSS</option>
                     <option>RETA</option>
                     <option>ORE</option>
                 </select></td>
@@ -161,10 +164,6 @@
         <button type="submit" class="btn btn-outline-success">Enviar</button>
 
     </form> 
-</div>
-    
-
-<?php include "pie.html";?>
 </div>
     
 
