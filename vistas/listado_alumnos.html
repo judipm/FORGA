@@ -58,7 +58,7 @@
                     <th>Tipo de entrevista</th>
                     <th>Tipo de atención</th>
                     <th>Discapacidad</th>
-                    <td></td>             
+                    <td colspan="2"></td>             
                 </tr>
                 <?php foreach($listado_alumnos as $alumno){
                     ?>
@@ -81,6 +81,7 @@
                         <td><?= $alumno["Tipo_atencion"]; ?></td>
                         <td><?= $alumno["Discapacidad"]; ?></td>
                         <td><a href="edita_alumno.php?id=<?= $alumno['id']?>" class="btn btn-outline-primary btn-sm">Editar</a></td>
+                        <td><a href="eliminar_alumno.php?id=<?= $alumno['id']?>" class="btn btn-outline-danger btn-sm">Eliminar</a></td>
                     </tr>
                     <?php  } ?>   
     </div>
