@@ -52,7 +52,7 @@
                 </select>
             </td>
         </tr>
-        <tr id="asistencia-si" style="display:<?php echo $datos_usuario["Asistencia"] == 'si' ? 'table-row' : 'none'; ?>">
+        <tr id="asistencia-si" style='display:<?php if($datos_usuario["Asistencia"] === "si"){echo "table-row";}else{echo "none";}?>'>
             <th>En caso de asistencia</th>
             <td>
                 <select class="form-select form-select-sm" aria-label=".form-select-lg example" name="tipo_asistencia">
@@ -62,7 +62,7 @@
                 </select>
             </td>
         </tr>
-        <tr id="asistencia-no" style="display:<?php echo $datos_usuario["Asistencia"] == 'no' ? 'table-row' : 'none'; ?>">
+        <tr id="asistencia-no" style='display: <?php if($datos_usuario["Asistencia"] === "no"){echo "table-row";}else{echo "none";}?>'>
             <th>En caso de ausencia</th>
             <td>
                 <select class="form-select form-select-sm" aria-label=".form-select-lg example" name="tipo_ausencia">
