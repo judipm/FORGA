@@ -17,6 +17,14 @@
     document.getElementById('ocupado-si').style.display = 'none';
   }
 }
+function mostrar_carnet(carnet) {
+    if (carnet === 'si') {
+      document.getElementById('carnet-si').style.display = 'table-row';
+      document.getElementById("carnet").value = "";
+    } else if (carnet === 'no') {
+      document.getElementById('carnet-si').style.display = 'none';
+    }
+  }
 </script>
 <div class="container mt-4">
     <form action="nuevo_alumno_proceso.php" method="post">
@@ -103,17 +111,22 @@
             <tr>
 			<th>Carnet de conducir</th>
 			<td>
+                <select class="form-select form-select-sm" aria-label=".form-select-lg example" name="carnet[]" id="carnet" onchange="mostrar_carnet(this.value)">
+					<option value="no">No</option>
+					<option value="si">Si</option>
+					
+				</select>
+			</td>
+			</tr>
+            <tr id="carnet-si" style="display:none;">
+            <th>Tipo de carnet</th>
+			<td>
 				<label><input type="checkbox" name="carnet[]" value="A1"> A1</label>
 				<label><input type="checkbox" name="carnet[]" value="A2"> A2</label>
 				<label><input type="checkbox" name="carnet[]" value="B1"> B1</label>
 				<label><input type="checkbox" name="carnet[]" value="B2"> B2</label>
 				<label><input type="checkbox" name="carnet[]" value="C1"> C1</label>
 				<label><input type="checkbox" name="carnet[]" value="C2"> C2</label>
-    <!-- Esta parte hay que mejorarla y hacer que no se pueda marcar lo de no tengo carnet a la vez que los carnets -->
-    <br>
-				<label><input type="checkbox" name="carnet[]" value="no"> No tengo carnet de conducir</label>
-			</td>
-			</tr>
             <tr>
                 <th>Vehículo</th> <!--Esta opción quiero poner que aparezca disponible o que aparezca cuando en carnet de conducir aparezca algo-->
                 <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="vehiculo">
@@ -156,8 +169,8 @@
             <tr>
                 <th>Discapacidad</th>
                 <td><select class="form-select form-select-sm" aria-label=".form-select-lg example" name="discapacidad">
-                    <option>Si</option>
                     <option>No</option>
+                    <option>Si</option>
                 </select></td>
             </tr>
         </table>
