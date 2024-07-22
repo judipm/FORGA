@@ -16,12 +16,12 @@ function eliminar_usuario($id){
 }
 function nuevo_alumno($apellidos, $nombre, $fecha_atencion, $asistencia, $tipo_asistencia, $tipo_ausencia, $sexo, $prestacion, $nivel_estudios, $edad, $carnet, $vehiculo, $entrevista, $tipo_atencion, $situacion, $caso_ocupado, $discapacidad) {
     $mbd = new PDO('mysql:host='.SERVIDOR_BBDD.';dbname='.BBDD, USER_BBDD, PASSWORD_BBDD);
-    $sql = "INSERT INTO alumnado (apellidos, nombre, fecha_atencion, asistencia, info_asistencia, info_ausencia, sexo, prestacion, nivel_estudios, edad, carnet, vehiculo, tipo_entrevista, tipo_atencion, situacion, ocupado, discapacidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO alumnado (Apellidos, Nombre, Fecha_atencion, Asistencia, Info_asistencia, Info_ausencia, Sexo, Prestacion, Nivel_estudios, Edad, Carnet, Vehiculo, Tipo_entrevista, Tipo_atencion, Situacion, Ocupado, Discapacidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
      $mbd->prepare($sql)->execute([$apellidos, $nombre, $fecha_atencion, $asistencia, $tipo_asistencia, $tipo_ausencia, $sexo, $prestacion, $nivel_estudios, $edad, $carnet, $vehiculo, $entrevista, $tipo_atencion, $situacion, $caso_ocupado, $discapacidad]);    
 }
 function actualizar_alumno ($id, $apellidos, $nombre, $fecha_atencion, $asistencia, $tipo_asistencia, $tipo_ausencia, $sexo, $prestacion, $nivel_estudios, $edad, $carnet, $vehiculo, $entrevista, $tipo_atencion, $situacion, $caso_ocupado, $discapacidad){
     $mbd = new PDO('mysql:host='.SERVIDOR_BBDD.';dbname='.BBDD, USER_BBDD, PASSWORD_BBDD);
-    $sql = "UPDATE alumnado SET apellidos =?, nombre =?, fecha_atencion =?, asistencia =?, info_asistencia =?, info_ausencia =?, sexo =?, prestacion =?, nivel_estudios =?, edad =?, carnet =?, vehiculo =?, tipo_entrevista =?, tipo_atencion =?, situacion =?, ocupado =?, discapacidad =? WHERE id =?";
+    $sql = "UPDATE alumnado SET Apellidos =?, Nombre =?, Fecha_atencion =?, Asistencia =?, Info_asistencia =?, Info_ausencia =?, Sexo =?, Prestacion =?, Nivel_estudios =?, Edad =?, Carnet =?, Vehiculo =?, Tipo_entrevista =?, Tipo_atencion =?, Situacion =?, Ocupado =?, Discapacidad =? WHERE id =?";
     $mbd->prepare($sql)->execute([$apellidos, $nombre, $fecha_atencion, $asistencia, $tipo_asistencia, $tipo_ausencia, $sexo, $prestacion, $nivel_estudios, $edad, $carnet, $vehiculo, $entrevista, $tipo_atencion, $situacion, $caso_ocupado, $discapacidad, $id]);
 }
 
@@ -40,10 +40,5 @@ function listado(){
     $pacientes = $mbd->query('SELECT * FROM datos');
     $array = $pacientes->fetchAll(PDO::FETCH_ASSOC);
     return($array);
-}
-function nuevos_datos($info_1, $info_2, $info_3, $info_4, $info_5, $info_6){
-    $mbd = new PDO('mysql:host='.SERVIDOR_BBDD.';dbname='.BBDD, USER_BBDD, PASSWORD_BBDD); 
-    $sql = "INSERT INTO datos (info_1, info_2, info_3, info_4, info_5, info_6) VALUES (?,?,?,?,?,?) ";
-    $mbd->prepare($sql)->execute([$info_1, $info_2, $info_3, $info_4, $info_5, $info_6]);
 }
 ?>
