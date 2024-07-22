@@ -1,18 +1,15 @@
 #filtros{
-    font-size: 8pt;
+    font-size: 9pt;
     max-width: 1000px;
     margin:0 auto;
 }
 #listado{
-    font-size: 9pt;
+    font-size: 10pt;
     margin-top: 30px;
-}
-#listado tr th, #listado tr td{
-    max-width: 15px;
 }
 .contenedor{
     margin: 0 auto;
-    max-width: 1350px;
+    max-width: 1400px;
     padding-top: 30px;
 }
 body{
