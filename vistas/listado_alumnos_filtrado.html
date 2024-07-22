@@ -61,7 +61,29 @@
                     <td></td>             
                 </tr>
                 <?php foreach($listado_alumnos as $alumno){
-                    if(in_array($sexo, $alumno) && in_array( $situacion_laboral,$alumno) && $edad == 1 && $alumno["Edad"] < 35){ ?>
+                    if($edad == ""){
+                    if(in_array($sexo, $alumno) && in_array( $situacion_laboral,$alumno) && in_array("",$alumno)){ ?>
+                        <tr>
+                            <td><?= $alumno["Apellidos"]; ?></td>
+                            <td><?= $alumno["Nombre"]; ?></td>
+                            <td><?= $alumno["Sexo"]; ?></td>
+                            <td><?= $alumno["Edad"]; ?></td>
+                            <td><?= $alumno["Situacion"]; ?></td>
+                            <td><?= $alumno["Ocupado"]; ?></td>
+                            <td><?= $alumno["Fecha_atencion"]; ?></td>
+                            <td><?= $alumno["Asistencia"]; ?></td>
+                            <td><?= $alumno["Info_asistencia"]; ?></td>
+                            <td><?= $alumno["Info_ausencia"]; ?></td>
+                            <td><?= $alumno["Prestacion"]; ?></td>
+                            <td><?= $alumno["Nivel_estudios"]; ?></td>
+                            <td><?= $alumno["Carnet"]; ?></td>
+                            <td><?= $alumno["Vehiculo"]; ?></td>
+                            <td><?= $alumno["Tipo_entrevista"]; ?></td>
+                            <td><?= $alumno["Tipo_atencion"]; ?></td>
+                            <td><?= $alumno["Discapacidad"]; ?></td>
+                        </tr>
+                    <?php }}if($edad == 1){
+                    if(in_array($sexo, $alumno) && in_array( $situacion_laboral,$alumno) && $alumno["Edad"] < 35){ ?>
                     <tr>
                         <td><?= $alumno["Apellidos"]; ?></td>
                         <td><?= $alumno["Nombre"]; ?></td>
@@ -81,7 +103,8 @@
                         <td><?= $alumno["Tipo_atencion"]; ?></td>
                         <td><?= $alumno["Discapacidad"]; ?></td>
                     </tr>
-                    <?php  }if(in_array($sexo, $alumno) && in_array( $situacion_laboral,$alumno) && $edad == 2 && $alumno["Edad"] > 35 && $alumno["Edad"] < 60){?>
+                    <?php  }}if($edad == 2){
+                        if(in_array($sexo, $alumno) && in_array( $situacion_laboral,$alumno) && $alumno["Edad"] > 35 && $alumno["Edad"] < 60){?>
                         <tr>
                             <td><?= $alumno["Apellidos"]; ?></td>
                             <td><?= $alumno["Nombre"]; ?></td>
@@ -101,7 +124,8 @@
                             <td><?= $alumno["Tipo_atencion"]; ?></td>
                             <td><?= $alumno["Discapacidad"]; ?></td>
                         </tr>
-                    <?php  }if(in_array($sexo, $alumno) && in_array( $situacion_laboral,$alumno) && $edad == 3 && $alumno["Edad"] > 59){?>
+                    <?php }}if($edad == 3){  
+                        if(in_array($sexo, $alumno) && in_array( $situacion_laboral,$alumno) && $alumno["Edad"] > 59){?>
                         <tr>
                             <td><?= $alumno["Apellidos"]; ?></td>
                             <td><?= $alumno["Nombre"]; ?></td>
@@ -121,7 +145,7 @@
                             <td><?= $alumno["Tipo_atencion"]; ?></td>
                             <td><?= $alumno["Discapacidad"]; ?></td>
                         </tr>
-                    <?php  }}?>
+                    <?php  }}}?>
                 </table>
 
 </div>
