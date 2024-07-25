@@ -7,7 +7,8 @@ $mes_mayo = listado_mes(5);
 $mes_junio = listado_mes(6);
 $mes_julio = listado_mes(7);
 $mes_agosto = listado_mes(8);
-$listado = listado_alumnos();
+$listado_alumnos = listado_alumnos();
+$listado = listado();
 
 include "vistas/principal.html";
 ?>
