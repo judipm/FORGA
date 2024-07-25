@@ -26,34 +26,72 @@
     </div>
     <br><br>
     <div class="row">
-        <div class="col-sm-4">
-            <h5>Tabla</h5>
+        <div class="col-sm-5">
+            <h5>Número total de personas atendidas</h5>
             <table id="la_tabla" class="table table-striped-columns" >
                 <tr>
                     <td></td>
-                    <?php foreach($listado as $datos){?>
-                        <td><?= $datos["mes"]; ?></td>
-                    <?php } ?>
+                    <th>Total de personas atendidas</th>
+                    <th>Las que asistieron a la entrevista</th>
+                    <th>NO IPI</th>
+                    <th>IPI</th>
+                    <th>IPI GX</th>
                 </tr>
                 <tr>
-                    <th>info 1</th>
-                    <?php foreach($listado as $datos){?>
-                        <td><?= $datos["info_1"]; ?></td>
-                    <?php } ?>
+                    <th>Abril</th>
+                    <?php foreach($mes_abril as $mes){
+                        $mes["mes"];{?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php }} ?>
                 </tr>
                 <tr>
-                    <th>info 2</th>
-                    <?php foreach($listado as $datos){?>
-                        <td><?= $datos["info_2"]; ?></td>
-                    <?php } ?>
+                    <th>Mayo</th>
+                    <?php foreach($mes_mayo as $mes){
+                        $mes["mes"];{?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php }} ?>
                 </tr>
                 <tr>
-                    <th>info 3</th>
-                    <?php foreach($listado as $datos){?>
-                        <td><?= $datos["info_3"]; ?></td>
-                    <?php } ?>
+                    <th>Junio</th>
+                    <?php foreach($mes_junio as $mes){
+                        $mes["mes"];{?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php }} ?>
                 </tr>
-               
+                <tr>
+                    <th>Julio</th>
+                    <?php foreach($mes_julio as $mes){
+                        $mes["mes"];{?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php }} ?>
+                </tr>
+                <tr>
+                    <th>Agosto</th>
+                    <?php foreach($mes_agosto as $mes){
+                        $mes["mes"];{?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php }} ?>
+                </tr>
             </table>
         </div>
         <div class="col-sm-4">

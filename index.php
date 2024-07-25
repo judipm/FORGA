@@ -2,7 +2,12 @@
 <?php 
 include "modelos/bbdd/datos.php";
 
-$listado = listado();
+$mes_abril = listado_mes(4);
+$mes_mayo = listado_mes(5);
+$mes_junio = listado_mes(6);
+$mes_julio = listado_mes(7);
+$mes_agosto = listado_mes(8);
+$listado = listado_alumnos();
 
 include "vistas/principal.html";
 ?>

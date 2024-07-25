@@ -24,7 +24,21 @@ function actualizar_alumno ($id, $apellidos, $nombre, $fecha_atencion, $asistenc
     $sql = "UPDATE alumnado SET Apellidos =?, Nombre =?, Fecha_atencion =?, Asistencia =?, Info_asistencia =?, Info_ausencia =?, Sexo =?, Prestacion =?, Nivel_estudios =?, Edad =?, Carnet =?, Vehiculo =?, Tipo_entrevista =?, Tipo_atencion =?, Situacion =?, Ocupado =?, Discapacidad =? WHERE id =?";
     $mbd->prepare($sql)->execute([$apellidos, $nombre, $fecha_atencion, $asistencia, $tipo_asistencia, $tipo_ausencia, $sexo, $prestacion, $nivel_estudios, $edad, $carnet, $vehiculo, $entrevista, $tipo_atencion, $situacion, $caso_ocupado, $discapacidad, $id]);
 }
-
+function listado_mes($mes){
+    $mbd = new PDO('mysql:host='.SERVIDOR_BBDD.';dbname='.BBDD, USER_BBDD, PASSWORD_BBDD); 
+    $sql = "SELECT Fecha_atencion, Asistencia, Tipo_entrevista,
+            MONTH(Fecha_atencion) AS mes,
+            COUNT(MONTH(Fecha_atencion)) as recuentoTotal,
+            SUM(Asistencia = 'Si') as la_asistencia,
+            SUM(Tipo_entrevista = 'IPI') as IPI,
+            SUM(Tipo_entrevista = 'No IPI') as NoIPI,
+            SUM(Tipo_entrevista = 'IPI GX') as GX
+            FROM alumnado
+            WHERE MONTH(Fecha_atencion) =". $mes;
+    $alumnado = $mbd->query($sql);
+    $array = $alumnado->fetchAll(PDO::FETCH_ASSOC);
+    return($array);
+}
 function datos_un_usuario($id){	
 	
 		$mbd = new PDO('mysql:host='.SERVIDOR_BBDD.';dbname='.BBDD, USER_BBDD, PASSWORD_BBDD);
