@@ -94,6 +94,7 @@
                     <?php }} ?>
                 </tr>
             </table>
+             <button onclick="exportarTablaAExcel('la_tabla', 'datos.xlsx')"class="btn btn-outline-primary btn-sm">Descargar como Excel</button>
         </div>
         <div class="col-sm-4">
             <h5 align="center">Gráfica circular</h5>
@@ -160,8 +161,17 @@
             
              </pre>
     </div>
-
-</div>
+</<div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+<script>
+    function exportarTablaAExcel(idTabla, nombreArchivo) {
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.table_to_sheet(document.getElementById(idTabla));
+        XLSX.utils.book_append_sheet(wb, ws, "Hoja1");
+        XLSX.writeFile(wb, nombreArchivo);
+    }
+</script>
 
 
 <?php include "pie.html";?>
