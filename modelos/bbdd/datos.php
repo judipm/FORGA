@@ -27,14 +27,14 @@ function actualizar_alumno ($id, $apellidos, $nombre, $fecha_atencion, $asistenc
 function listado_mes($mes){
     $mbd = new PDO('mysql:host='.SERVIDOR_BBDD.';dbname='.BBDD, USER_BBDD, PASSWORD_BBDD); 
     $sql = "SELECT Fecha_atencion, Asistencia, Tipo_entrevista,
-            MONTH(Fecha_atencion) AS mes,
-            COUNT(MONTH(Fecha_atencion)) as recuentoTotal,
-            SUM(Asistencia = 'Si') as la_asistencia,
-            SUM(Tipo_entrevista = 'IPI') as IPI,
-            SUM(Tipo_entrevista = 'No IPI') as NoIPI,
-            SUM(Tipo_entrevista = 'IPI GX') as GX
+            MONTH(Fecha_atencion) AS mes, /* la función MONTH() selecciona el mes dentro de una fecha tipo date */
+            COUNT(MONTH(Fecha_atencion)) as recuentoTotal,  /* esta cuenta el total de fechas atentidas en el mes seleccionado */
+            SUM(Asistencia = 'Si') as la_asistencia, /* una suma de todos los que confirmaron asistencia */
+            SUM(Tipo_entrevista = 'IPI') as IPI, /* una suma de todos los IPI */
+            SUM(Tipo_entrevista = 'No IPI') as NoIPI, /* una suma de todos los No IPI */
+            SUM(Tipo_entrevista = 'IPI GX') as GX /* una suma de todos los IPI GX */
             FROM alumnado
-            WHERE MONTH(Fecha_atencion) =". $mes;
+            WHERE MONTH(Fecha_atencion) =". $mes; /* marcamos el mes para el que queremos sacar los datos */
     $alumnado = $mbd->query($sql);
     $array = $alumnado->fetchAll(PDO::FETCH_ASSOC);
     return($array);

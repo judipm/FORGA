@@ -1,34 +1,8 @@
 <?php include "cabecera.html";?>
 
 <div class="container mt-4">
-    <div class="display-6">Hola, hemos dejado la página principal a modo de presentación mientras el proyecto no está acabado. 
-         <br>Lo de abajo es un boceto que hicimos antes de tener la información sobre los datos que ibamos a trabajar. <br><br>
-    </div>
-    <div>
-        Por ahora solo tenemos:
-        <ul>
-            <li>El listado para el alumnado con las opciones que pedisteis</li>
-            <li>Una búsqueda de personas por los filtros de sexo, edad y situacion actual</li>
-            <li>Añadir un nuevo alumno</li>
-            <li>Editar un alumno</li>
-            <li>Eliminar un alumno</li>
-            <li>Hacer un recuento del total de personas atendidas </li>
-        <li>Hacer un recuento del total de personas que asistieron a la entrevista</li>
-        <li>De esas citas cuantas son IPI y cuantas no lo son</li>
-        <li>De las que son IPI, cuantas son de GX y cuantas no.</li>
-        <li>Esta tabla tiene que generarla desagregada por mes y haciendo el sumatorio en cada una de las columnas</li>
-        </ul>
-        <br>
-       ¿Qué nos queda? <br>
-       <ul>
-        <li>El tema de sacar gráficas por mes a partir de los datos de la tabla</li>
-        
-       </ul>
-    </div>
-    <br><br>
     <div class="row">
-        <div class="col-sm-5">
-            <h5>Número total de personas atendidas</h5>
+        <div class="col-sm-4">
             <table id="la_tabla" class="table table-striped-columns" >
                 <tr>
                     <td></td>
@@ -40,128 +14,110 @@
                 </tr>
                 <tr>
                     <th>Abril</th>
-                    <?php foreach($mes_abril as $mes){
-                        $mes["mes"];{?>
+                    <?php foreach($mes_abril as $mes){?>
                         <td><?= $mes["recuentoTotal"]; ?></td>
                         <td><?= $mes["la_asistencia"]; ?></td>
                         <td><?= $mes["NoIPI"]; ?></td>
                         <td><?= $mes["IPI"]; ?></td>
                         <td><?= $mes["GX"]; ?></td>
-                    <?php }} ?>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <th>Mayo</th>
-                    <?php foreach($mes_mayo as $mes){
-                        $mes["mes"];{?>
+                    <?php foreach($mes_mayo as $mes){?>
                         <td><?= $mes["recuentoTotal"]; ?></td>
                         <td><?= $mes["la_asistencia"]; ?></td>
                         <td><?= $mes["NoIPI"]; ?></td>
                         <td><?= $mes["IPI"]; ?></td>
                         <td><?= $mes["GX"]; ?></td>
-                    <?php }} ?>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <th>Junio</th>
-                    <?php foreach($mes_junio as $mes){
-                        $mes["mes"];{?>
+                    <?php foreach($mes_junio as $mes){?>
                         <td><?= $mes["recuentoTotal"]; ?></td>
                         <td><?= $mes["la_asistencia"]; ?></td>
                         <td><?= $mes["NoIPI"]; ?></td>
                         <td><?= $mes["IPI"]; ?></td>
                         <td><?= $mes["GX"]; ?></td>
-                    <?php }} ?>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <th>Julio</th>
-                    <?php foreach($mes_julio as $mes){
-                        $mes["mes"];{?>
+                    <?php foreach($mes_julio as $mes){?>
                         <td><?= $mes["recuentoTotal"]; ?></td>
                         <td><?= $mes["la_asistencia"]; ?></td>
                         <td><?= $mes["NoIPI"]; ?></td>
                         <td><?= $mes["IPI"]; ?></td>
                         <td><?= $mes["GX"]; ?></td>
-                    <?php }} ?>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <th>Agosto</th>
-                    <?php foreach($mes_agosto as $mes){
-                        $mes["mes"];{?>
+                    <?php foreach($mes_agosto as $mes){?>
                         <td><?= $mes["recuentoTotal"]; ?></td>
                         <td><?= $mes["la_asistencia"]; ?></td>
                         <td><?= $mes["NoIPI"]; ?></td>
                         <td><?= $mes["IPI"]; ?></td>
                         <td><?= $mes["GX"]; ?></td>
-                    <?php }} ?>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <th>Septiembre</th>
+                    <?php foreach($mes_septiembre as $mes){?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <th>Octubre</th>
+                    <?php foreach($mes_octubre as $mes){?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <th>Noviembre</th>
+                    <?php foreach($mes_noviembre as $mes){?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                    <th>Diciembre</th>
+                    <?php foreach($mes_diciembre as $mes){?>
+                        <td><?= $mes["recuentoTotal"]; ?></td>
+                        <td><?= $mes["la_asistencia"]; ?></td>
+                        <td><?= $mes["NoIPI"]; ?></td>
+                        <td><?= $mes["IPI"]; ?></td>
+                        <td><?= $mes["GX"]; ?></td>
+                    <?php } ?>
                 </tr>
             </table>
+            <button onclick="exportarTablaAExcel('la_tabla', 'datos.xlsx')"class="btn btn-outline-primary btn-sm">Descargar como Excel</button>
         </div>
+        <div class="col-sm-8">
+            <h5 align="center">Gráfica de barras dobles Plotly</h5>
+            <div id='myDiv' style="width: 950px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+        </div>
+    </div>
+</div>
+<div class="container mt-4">
+    <div class="row">
         <div class="col-sm-4">
             <h5 align="center">Gráfica circular</h5>
             <canvas id="chart1" style="width:80%;" height="80"></canvas><!--Utilizada para dibujar gráficos-->
         </div>
-        <div class="col-sm-4">
-            <h5 align="center">Gráfica de barras</h5>
-            <canvas id="chart2" style="width:80%;" height="80"></canvas><!--Utilizada para dibujar gráficos-->
-        </div>
-    </div>
-    <div class="mt-4">
-        <pre><!-- esta etiqueta pone el texto preformateado, es decir, tal cual se pone aqui en el html. Para copiar y pegar texto es cómodo que no hay que andar con los <br>-->
-        Estamos trabajando con un Excel con el que estamos recogiendo datos para la generación de gráficas y tablas.
-        Los datos que recogemos son los siguientes:
-            
-            ·   Fecha de atención
-            
-            ·   Apellidos
-            
-            ·   Nombre
-            
-            ·   Asistencia (SI/NO)
-            
-            ·   En caso de asistencia (PRESENCIAL/TELEFÓNICA/EMAIL)
-
-            ·   En caso de ausencia (CAUSA DEL ORIENTADOR/JUSTIFICADA/COLOCACIÓN/DESINTERÉS/NO LOCALIZADO)
-            
-            ·   Sexo (M/F)
-            
-            ·   Prestación (SI/NO)
-            
-            ·   Nivel de estudios (SIN ESTUDIOS/EGB/ESO/BACHILLER/FP MEDIO/FP SUPERIOR/DIPLOMATURA/LICENCIATURA/MASTER/DOCTORADO)
-            
-            ·   Edad
-            
-            ·   Carnet de conducir (cada uno de ellos)
-            
-            ·   Vehículo (SI/NO)
-            
-            ·   Tipo de entrevista (No IPI/ IPI/IPI GX)
-            
-            ·   Tipo de atención (AP/PP/AE/SE)
-            
-            ·   Situación actual (DESEMPLEADO/OCUPADO)
-            
-            ·   En caso de ocupado (RXSS/RETA/ORE)
-            
-            ·   Discapacidad (SI/NO)
-             
-            Con estos datos necesitamos sacar tablas filtradas por cada una de las situaciones y por tramos de edad y sexo.
-            
-            <strong>Además, necesitamos poder sacar tablas y gráficas específicamente de:
-            
-               NÚMERO TOTAL DE PERSONAS ATENDIDAS en la que constan:
-            
-               Personas atendidas (que asistieron a la entrevista)
-            
-               De esas citas cuantas son IPI y cuantas no lo son
-            
-               De las que son IPI, cuantas son de GX y cuantas no.
-    
-            Esta tabla tiene que generarla desagregada por mes y haciendo el sumatorio en cada una de las columnas. Tambien tiene que poder realizar gráficas con respecto a cada dato.
-            Nos gustaría que se automatizara cada proceso. </strong>
-            
-             </pre>
-    </div>
-
+    </div>  
 </div>
-
 
 <?php include "pie.html";?>
