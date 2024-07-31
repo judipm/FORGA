@@ -56,41 +56,6 @@ include "vistas/principal.html";
         data: data,
     }); 
 
-    //AQUÍ EMPIEZA EL GRÁFICO DE BARRAS
-
-    var ctx2 = document.getElementById("chart2"); //seleccionamos el elemento CANVAS "chart2"
-    var data2 = { 
-        labels: [ //esta es la información que va debajo de la gráfica
-            <?php foreach($mes_abril as $datos):?>
-            "<?php echo $datos["mes"];?>",
-            <?php endforeach; ?>
-            ],
-        datasets: [{
-            label: "Info 1", 
-            data: [
-                <?php foreach($mes_abril as $datos): ?>
-                <?php echo $datos["recuentoTotal"]; ?>,
-                <?php endforeach; ?>
-            ],                
-        backgroundColor: "#FF6384",
-        borderWidth: 3
-        }]
-    };
-    var options = {
-        scales: {
-            yAxes: [{ //será sobre el eje Y
-                ticks:{
-                    beginAtZero:true //comenzará desde 0
-                }
-            }]
-        }
-    };
-    var chart2 = new Chart(ctx2, {
-        type: "bar", //valores line, bar
-        data: data2,
-        options: options 
-    });
-
 // GRAFICOS DE BARRAS CON PLOTLY
 
     var trace1 = {
@@ -132,4 +97,18 @@ include "vistas/principal.html";
     var layout = {barmode: 'group'};
 
     Plotly.newPlot('myDiv', data, layout);
+
+    //GRÁFICO CIRCULAR CON PLOTLY
+    var data = [{
+        values: [ <?php foreach($mes_julio as $mes){echo $mes["la_asistencia"];}?>, <?php foreach($mes_julio as $mes){echo $mes["NoIPI"];}?>, <?php foreach($mes_julio as $mes){echo $mes["IPI"];}?>, <?php foreach($mes_julio as $mes){echo $mes["GX"];}?> ],
+        labels: ['Asistencia', 'No IPI', 'IPI', 'IPI GX'],
+        type: 'pie'
+    }];
+
+    var layout = {
+     height: 600,
+      width: 600
+    };
+
+    Plotly.newPlot('circular', data, layout);
 </script>
